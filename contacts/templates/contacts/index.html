@@ -1,7 +1,7 @@
 {% if contact_list %}
     <ul>
     {% for contact in contact_list %}
-        <li><a href="/contacts/{{ person.id }}/">{{ Person.objects.all() }}</a></li>
+      <li><a href="/contacts/{{ person.id }}/">{{ Person.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

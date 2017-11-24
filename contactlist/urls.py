@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from contacts import views 
+from contacts import views
 #admin.autodiscover()
 
 urlpatterns = [

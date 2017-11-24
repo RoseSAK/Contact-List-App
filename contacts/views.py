@@ -5,26 +5,15 @@ from django.template import loader
 
 # Create your views here.
 
-
 def index(request):
     contact_list = Person.objects.all()
-    #output = print('\n').join([c.name for c in contact_list])
     template = loader.get_template('contacts/index.html')
-    context = {
-        'contact_list': contact_list,
-    }
+    context = {'contact_list': contact_list}
     return HttpResponse(template.render(context, request))
 
-def index(request):
-    contact_list = Person.objects.all()
-    output = print('\n').join([c.name for c in contact_list])
-    return HttpResponse(output)
-
-def view_list(request):
-    return HttpResponse("Contact List:")
-
-def contact(request, person_id):
-    output = str(Person.objects.order_by('-name')[person_id])
-    return HttpResponse("Showing contact %s" % person_id, output )
-
-# Create your views here.
+def contact_details(request, person_id):
+    c = Person.objects.get(pk=person_id)
+    c_info = c.get_fields
+    #print(type(c), c)
+    #output = ".".join([i for i in c_info])
+    return HttpResponse(c_info)
