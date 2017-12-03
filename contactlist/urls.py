@@ -20,6 +20,7 @@ from contacts import views
 #admin.autodiscover()
 
 urlpatterns = [
+    #url(r'^$')
     url(r'^contacts/', include('contacts.urls')),
     url(r'^admin/', admin.site.urls),
 ]
