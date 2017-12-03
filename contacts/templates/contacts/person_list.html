@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'contacts/style.css' %}" />
+<div>
 <h1>Contacts</h1>
 {% if person_list %}
     <ul>
@@ -8,3 +12,4 @@
 {% else %}
     <p>No contacts are available.</p>
 {% endif %}
+</div>
