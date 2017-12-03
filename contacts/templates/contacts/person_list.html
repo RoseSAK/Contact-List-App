@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+{% if person_list %}
+    <ul>
+    {% for person in person_list %}
+        <li><a href="/contacts/{{ person.id }}/">{{ person.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No contacts are available.</p>
+{% endif %}

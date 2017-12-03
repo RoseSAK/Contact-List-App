@@ -11,12 +11,16 @@ from .models import Person
 # Create your views here.
 
 class IndexView(generic.ListView):
-    model = Person
-    template_name = 'contacts/index.html'
+    #template_name = 'templates/contacts/person_list.html'
+    context_object_name = 'person_list'
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        return context
+    def get_queryset(self):
+        return Person.objects.all()
+
+
+    #def get_context_data(self, **kwargs):
+    #    context = super(IndexView, self).get_context_data(**kwargs)
+    #    return context
 
 class DetailView(generic.DetailView):
     model = Person
@@ -26,10 +30,3 @@ class DetailView(generic.DetailView):
 #    template = loader.get_template('contacts/index.html')
 #    context = {'contact_list': contact_list}
 #    return HttpResponse(template.render(context, request))
-
-#def contact_details(request, person_id):
-#    c = Person.objects.get(pk=person_id)
-#    c_info = c.get_fields
-    #print(type(c), c)
-    #output = ".".join([i for i in c_info])
-#    return HttpResponse(c_info)
