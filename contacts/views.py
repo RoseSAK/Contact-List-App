@@ -22,7 +22,7 @@ class DetailView(generic.DetailView):
 def search_results(request):
     if request.method == 'GET': # If the search box submit button is used
         search_query = request.GET.get('search_box', None) # get query term
-        results = Person.objects.filter(Q(name__icontains=search_query)
+        results = Person.objects.filter(Q(name__icontains=search_query) # OR lookup
                                         |Q(address__icontains=search_query)
                                         |Q(department__icontains=search_query))
         return render(request,'contacts/search_results.html', {"results": results})
