@@ -1,8 +1,13 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'contacts/style.css' %}" />
+
 <div>
 <h1>Contacts</h1>
+<form type="get" action="/contacts/search_results/" style="margin: 0">
+    <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
+    <button id="search_submit" type="submit" >Submit</button>
+</form>
 {% if person_list %}
     <ul>
     {% for person in person_list %}

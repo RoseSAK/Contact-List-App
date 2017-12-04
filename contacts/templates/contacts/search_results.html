@@ -1,0 +1,14 @@
+<h2> Search Results</h2>
+{% if results %}
+    <ul>
+    {% for result in results %}
+      <h3>Name: {{ result.name }}</h3>
+      <p>Address: {{ result.address }}</p>
+      <p>Contact Details: {{ result.contact_details }}</p>
+      <p>Department: {{ result.department }}</p>
+      <p>Manager: {{ result.manager }}</p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found.</p>
+{% endif %}
