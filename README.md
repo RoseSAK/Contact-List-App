@@ -4,8 +4,8 @@ Contact List App - Rose Azad Khan
 This Django app displays a database of contacts for anyone to view and search.
 There is an admin page from which new contacts and their details can be added to the database.
 Admin login details:
-  Email: roseazadkhan@gmail.com
-  Password: Solirius
+  Username: admin
+  Password: solirius
 
 Run in virtual environment such as Anaconda and using Python 3
 
